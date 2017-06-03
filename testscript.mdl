@@ -1,0 +1,7 @@
+push
+move 250 250 0
+rotate y 30
+rotate x 30
+box 10 10 -100 100 100 100
+box 10 10 10 50 50 50
+display
