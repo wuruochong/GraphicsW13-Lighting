@@ -86,3 +86,13 @@ How often do we do these calculations?
 	* Lookup vertex normals for each polygon vertex
 	* Generate new normal values in scanline and drawline
 	* Generate new normal values in scannline and draw_line
+
+**draw.c**
+    * flat_shade
+    * phong_shade
+    
+** write mdl commands into my_main.c**
+    * LIGHT
+    * CONSTANTS
+    * AMBIENT
+    * //SHADING 

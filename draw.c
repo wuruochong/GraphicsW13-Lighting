@@ -20,6 +20,21 @@ color rand_color(){
 	return c;
 }
 
+double calc_Light (struct matrix * polygons, int point, ) {
+  //ambient light: [A] (0-255), [kA] (0-1), I_ambient = A*kA
+  //diffuse light: [L] <x,y,z>, [kD] (0-1), [N], I_diffuse = L*kD *costheta
+  //specular light: [L], [N], [V] (all vectors), [kS], [p] (changeable ^ value = quicker fading)
+  
+}
+
+
+
+void flat_shade (struct matrix * polygons, int point, screen s, zbuffer zb) {
+  color c;
+  //calculate color
+  scan_line(polygons, point, s, c, zb);
+}
+
 void scan_line( struct matrix * polygons, int point, screen s, color c, zbuffer zb) {
 	if (polygons->lastcol < 3){
 		printf("Need a polygon to do scan line conversion!\n");
@@ -195,6 +210,7 @@ void draw_polygons( struct matrix *polygons, screen s, zbuffer zb, color c ) {
 
       //printf("polygon %d\n", point);
       // scanline_convert( polygons, point, s, zb );
+      /*
 			c.red = 255;
 			c.green = 0;
 			c.blue = 0;
@@ -223,6 +239,7 @@ void draw_polygons( struct matrix *polygons, screen s, zbuffer zb, color c ) {
       		 polygons->m[1][point+2],
       		 polygons->m[2][point+2],
       		 s, zb, c);
+      		 */
        }
   }
 }
