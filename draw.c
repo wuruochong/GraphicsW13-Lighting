@@ -20,18 +20,26 @@ color rand_color(){
 	return c;
 }
 
-double calc_Light (struct matrix * polygons, int point, ) {
+double * calc_rLight (struct matrix * polygons, int point, int amb_R, int amb_G, int amb_B, double kA, int dX, int dY, int dZ, int dif_R, int dif_G, int dif_B, double kD, ) {
+  double I[3][3];
+  
   //ambient light: [A] (0-255), [kA] (0-1), I_ambient = A*kA
+  I[0][0] = amb_R * kA;
+  I[0][1] = amb_G * kA;
+  I[0][2] = amb_B * kA;
+  
   //diffuse light: [L] <x,y,z>, [kD] (0-1), [N], I_diffuse = L*kD *costheta
+  
   //specular light: [L], [N], [V] (all vectors), [kS], [p] (changeable ^ value = quicker fading)
   
 }
 
 
 
+
 void flat_shade (struct matrix * polygons, int point, screen s, zbuffer zb) {
   color c;
-  //calculate color
+  //double light = calc_Light();
   scan_line(polygons, point, s, c, zb);
 }
 
